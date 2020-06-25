@@ -75,8 +75,8 @@ module Doorkeeper
     end
 
     def token
-      @token ||= AccessToken.by_token(request.POST['token']) ||
-        AccessToken.by_refresh_token(request.POST['token'])
+      @token ||= AccessToken.by_token(params['token']) ||
+        AccessToken.by_refresh_token(params['token'])
     end
 
     def strategy
